@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Code Roaster — Screen 03: Result State | DevFest Nashik 2026</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f6f3f2",
+            "tertiary-container": "#ffa396",
+            "tertiary-fixed": "#ffdad5",
+            "secondary-fixed": "#d8e2ff",
+            "on-secondary-fixed": "#001a41",
+            "surface": "#fcf9f8",
+            "on-tertiary-fixed-variant": "#930004",
+            "on-primary-fixed-variant": "#5f4100",
+            "on-primary-container": "#644500",
+            "error": "#ba1a1a",
+            "secondary-container": "#4d8efe",
+            "on-error-container": "#93000a",
+            "primary-container": "#edb13e",
+            "on-error": "#ffffff",
+            "tertiary-fixed-dim": "#ffb4a9",
+            "outline-variant": "#d4c4af",
+            "inverse-primary": "#fabc48",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container-high": "#ebe7e7",
+            "secondary": "#005ac1",
+            "on-primary-fixed": "#271900",
+            "on-tertiary-fixed": "#410001",
+            "primary-fixed-dim": "#fabc48",
+            "tertiary": "#b91e17",
+            "on-secondary-container": "#00285c",
+            "on-primary": "#ffffff",
+            "surface-dim": "#dcd9d9",
+            "primary-fixed": "#ffdeaa",
+            "surface-container": "#f0edec",
+            "error-container": "#ffdad6",
+            "surface-container-lowest": "#ffffff",
+            "surface-bright": "#fcf9f8",
+            "background": "#fcf9f8",
+            "inverse-on-surface": "#f3f0ef",
+            "secondary-fixed-dim": "#adc6ff",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#004494",
+            "surface-variant": "#e5e2e1",
+            "outline": "#827563",
+            "inverse-surface": "#313030",
+            "on-surface": "#1c1b1b",
+            "primary": "#7d5700",
+            "on-surface-variant": "#504535",
+            "on-background": "#1c1b1b",
+            "surface-tint": "#7d5700",
+            "on-tertiary-container": "#9b0005",
+            "on-secondary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "gutter-mobile": "0.75rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter": "1.5rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "label-badge": ["JetBrains Mono"],
+            "headline-md": ["Bricolage Grotesque"],
+            "display-hero-mobile": ["Bricolage Grotesque"],
+            "code-inline": ["JetBrains Mono"],
+            "body-lg": ["Space Grotesk"],
+            "display-hero": ["Bricolage Grotesque"],
+            "body-md": ["Space Grotesk"],
+            "code-block": ["JetBrains Mono"],
+            "body-sm": ["Space Grotesk"],
+            "label-button": ["Space Grotesk"],
+            "headline-lg-mobile": ["Bricolage Grotesque"],
+            "headline-sm": ["Space Grotesk"],
+            "headline-lg": ["Bricolage Grotesque"]
+          },
+          "fontSize": {
+            "label-badge": ["12px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "code-inline": ["13px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "code-block": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "label-button": ["16px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    /* Neo-Brutalist Dot Grid Pattern */
+    .bg-dot-grid {
+      background-color: #fcf9f8;
+      background-image: radial-gradient(#1c1b1b 1.25px, transparent 1.25px);
+      background-size: 24px 24px;
+    }
+    .brutal-border {
+      border: 2.5px solid #1c1b1b;
+    }
+    .brutal-border-3 {
+      border: 3px solid #1c1b1b;
+    }
+    .brutal-shadow {
+      box-shadow: 4px 4px 0px #1c1b1b;
+    }
+    .brutal-shadow-sm {
+      box-shadow: 2px 2px 0px #1c1b1b;
+    }
+    .brutal-shadow-lg {
+      box-shadow: 6px 6px 0px #1c1b1b;
+    }
+    .brutal-shadow-score {
+      box-shadow: 5px 5px 0px #1c1b1b;
+    }
+    /* Material symbol font tweak */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .fill-1 {
+      font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface bg-dot-grid min-h-screen antialiased selection:bg-primary-container selection:text-on-surface">
+<!-- ========================================== -->
+<!-- 1. TOP FLOATING PILL NAVBAR (Shared Anchor) -->
+<!-- ========================================== -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full border-[2.5px] border-on-surface dark:border-outline-variant w-[92%] max-w-6xl bg-surface-container-lowest dark:bg-inverse-surface shadow-[4px_4px_0px_#1c1b1b] dark:shadow-[4px_4px_0px_#fabc48] transition-all">
+<div class="flex justify-between items-center px-4 py-2.5 w-full">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-2 group text-headline-md font-headline-md text-on-surface dark:text-inverse-on-surface tracking-tight uppercase" href="#">
+<span class="bg-primary-container brutal-border px-2.5 py-0.5 rounded-full text-on-surface font-black text-body-sm brutal-shadow-sm group-hover:rotate-6 transition-transform">
+          ⚡ DEV
+        </span>
+<span class="tracking-tighter">CODE ROASTER 🔥</span>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-2 font-label-button text-label-button">
+<!-- Active Tab: Roaster -->
+<a class="text-on-surface dark:text-inverse-on-surface font-bold bg-primary-container text-on-primary-container px-3 py-1 rounded-full border-[2px] border-on-surface shadow-[2px_2px_0px_#1c1b1b]" href="#">
+          Roaster
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-button text-label-button px-3 py-1 hover:text-on-surface transition-colors" href="#">
+          Leaderboard
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-button text-label-button px-3 py-1 hover:text-on-surface transition-colors" href="#">
+          Hall of Shame
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-button text-label-button px-3 py-1 hover:text-on-surface transition-colors" href="#">
+          Rules
+        </a>
+</nav>
+<!-- Trailing Action Badges -->
+<div class="flex items-center gap-2">
+<div class="hidden sm:flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full brutal-border text-label-badge font-label-badge text-on-surface font-bold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+          DevFest 2026
+        </div>
+<button class="bg-primary-container text-on-surface brutal-border rounded-full px-4 py-1.5 font-label-button text-label-button font-bold brutal-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_#1c1b1b] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] fill-1">local_fire_department</span>
+          भाजून काढ 🔥
+        </button>
+</div>
+</div>
+</header>
+<!-- Spacer for floating bar -->
+<div class="pt-24 sm:pt-28"></div>
+<!-- ========================================== -->
+<!-- 2. CULTURAL BANNER BADGE & HERO INTRO -->
+<!-- ========================================== -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-2 mb-6">
+<!-- Top Pill Badges Cluster -->
+<div class="flex flex-wrap items-center justify-between gap-3 mb-5">
+<div class="inline-flex flex-wrap items-center gap-2">
+<!-- Panic Marathi Sticker -->
+<span class="inline-flex items-center gap-1.5 bg-tertiary text-on-tertiary brutal-border rounded-full px-3.5 py-1 text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b] rotate-[-1.5deg]">
+<span class="material-symbols-outlined text-[16px] fill-1">local_fire_department</span>
+          CODE BOL RAHA HAI • मला वाचवा! 🔥
+        </span>
+<!-- Nashikkar Grape Badge -->
+<span class="inline-flex items-center gap-1.5 bg-surface-container-lowest text-on-surface brutal-border rounded-full px-3 py-1 text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b] rotate-[1.5deg]">
+          🍇 नाशिककर Approved
+        </span>
+<!-- Tarri Chili Badge -->
+<span class="inline-flex items-center gap-1.5 bg-primary-container text-on-surface brutal-border rounded-full px-3 py-1 text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b]">
+          🌶️ Misal-Grade Spicy Extra Tarri Included
+        </span>
+</div>
+<!-- Live indicator -->
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1 rounded-full brutal-border text-label-badge font-label-badge text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<span class="font-bold text-tertiary">LIVE ROAST COMPLETE</span>
+</div>
+</div>
+<!-- Main Title & Savage Subtitle -->
+<div class="border-b-[2.5px] border-on-surface pb-6">
+<h1 class="text-display-hero-mobile md:text-display-hero font-display-hero text-on-surface tracking-tight leading-none mb-3">
+        CODE <span class="bg-primary-container px-3 py-0.5 brutal-border inline-block rotate-[-1deg] brutal-shadow">[ ROASTER ]</span> 🔥
+      </h1>
+<p class="text-body-md md:text-body-lg font-body-lg text-on-surface-variant max-w-3xl">
+        Paste your code. Pick your roast level. Get humbled. Get the fix. Handcrafted with cutting chai &amp; savage humor for <strong class="text-on-surface underline decoration-primary-container decoration-4">DevFest Nashik 2026</strong>.
+      </p>
+</div>
+<!-- ========================================== -->
+<!-- 3. SPICINESS / CONTROLS TOOLBAR -->
+<!-- ========================================== -->
+<div class="mt-5 bg-surface-container-lowest brutal-border brutal-shadow rounded-2xl p-3 sm:p-4 flex flex-wrap items-center justify-between gap-4">
+<!-- Spiciness Segmented Radios -->
+<div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+<span class="font-label-badge text-label-badge text-on-surface uppercase tracking-wider font-extrabold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">thermostat</span> SPICINESS:
+        </span>
+<div class="inline-flex items-center bg-surface-container p-1 rounded-full brutal-border gap-1">
+<!-- Halka -->
+<button class="px-3 py-1 rounded-full text-label-badge font-label-badge text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1">
+            Halka 🍋
+          </button>
+<!-- Tikha (Active Selected) -->
+<button class="px-3.5 py-1 rounded-full bg-primary-container text-on-surface brutal-border text-label-badge font-label-badge font-bold brutal-shadow-sm flex items-center gap-1">
+            Tikha 🌶️
+          </button>
+<!-- Zanzanit -->
+<button class="px-3 py-1 rounded-full text-label-badge font-label-badge text-on-surface-variant hover:text-on-surface transition-all flex items-center gap-1">
+            Zanzanit 🔥
+          </button>
+</div>
+</div>
+<!-- Stand-up Roaster Persona & Status Badge -->
+<div class="flex items-center gap-2 sm:gap-3 flex-wrap">
+<!-- Roaster Persona Selection -->
+<div class="relative">
+<select class="bg-surface-container-low text-on-surface brutal-border rounded-xl px-3 py-1.5 pr-8 text-label-badge font-label-badge font-bold focus:ring-0 focus:outline-none brutal-shadow-sm appearance-none cursor-pointer">
+<option>Persona: Stand-up Roaster (Marathi/Hindi)</option>
+<option>Persona: Strict Senior Architect</option>
+<option>Persona: Gordon Ramsay of Git</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-2 text-[18px]">expand_more</span>
+</div>
+<!-- Language Pill -->
+<div class="bg-surface-container px-3 py-1.5 rounded-xl brutal-border font-label-badge text-label-badge font-bold text-on-surface">
+          TS/JS (Auto-detect)
+        </div>
+<!-- Status Badge -->
+<div class="bg-[#34A853] text-white brutal-border px-3.5 py-1.5 rounded-xl font-label-badge text-label-badge font-bold brutal-shadow-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] fill-1">check_circle</span>
+          ROAST COMPLETE // निकाल लागला! 🎯
+        </div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 4. MAIN TWO-COLUMN WORKSPACE -->
+<!-- ========================================== -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- ================================================= -->
+<!-- LEFT COLUMN: The Disastrous Source Code (7 Cols)  -->
+<!-- ================================================= -->
+<div class="lg:col-span-6 xl:col-span-6 bg-surface-container-lowest rounded-[22px] brutal-border brutal-shadow overflow-hidden flex flex-col h-full">
+<!-- Editor Header -->
+<div class="bg-surface-container px-4 py-3 border-b-[2.5px] border-on-surface flex items-center justify-between">
+<!-- OS Dots -->
+<div class="flex items-center gap-2">
+<span class="w-3.5 h-3.5 rounded-full bg-[#EA4335] border-[2px] border-on-surface"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-[#FBBC05] border-[2px] border-on-surface"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-[#34A853] border-[2px] border-on-surface"></span>
+<span class="ml-2 font-code-inline text-code-inline font-bold text-on-surface">
+              INPUT // SRC <span class="bg-surface-container-highest px-1.5 py-0.5 rounded border border-on-surface">production_disaster.ts</span>
+</span>
+</div>
+<!-- Roasted Archive tag -->
+<div class="bg-primary-container text-on-surface font-label-badge text-label-badge font-bold px-2.5 py-0.5 rounded-full brutal-border shadow-[1px_1px_0px_#1c1b1b] flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">history_edu</span>
+            ROASTED ARCHIVE 📜
+          </div>
+</div>
+<!-- Code Block Canvas with Line Numbers -->
+<div class="p-4 sm:p-5 font-code-block text-code-block bg-[#1f1e1d] text-[#e0deda] overflow-x-auto flex-1 font-mono">
+<table class="w-full text-left border-collapse">
+<tbody>
+<!-- Line 01 -->
+<tr class="opacity-75">
+<td class="pr-4 py-0.5 text-outline select-none font-code-block text-code-block text-right w-8">01</td>
+<td class="text-[#7ea375] font-code-block text-code-block">// Nashik Grape Festival VIP Ticketing Logic</td>
+</tr>
+<!-- Line 02 -->
+<tr class="opacity-75">
+<td class="pr-4 py-0.5 text-outline select-none text-right">02</td>
+<td class="text-[#7ea375]">// "It works on my machine. Shapat!" - Junior Dev</td>
+</tr>
+<!-- Line 03 -->
+<tr class="bg-tertiary/20 border-l-4 border-tertiary">
+<td class="pr-4 py-0.5 text-[#ff8075] select-none text-right font-bold">03</td>
+<td><span class="text-[#f7768e] font-bold">async function</span> <span class="text-[#7aa2f7] font-bold">confirmTicketBooking</span>(userId: <span class="text-[#e0af68]">string</span>) {</td>
+</tr>
+<!-- Line 04 -->
+<tr class="bg-tertiary/20 border-l-4 border-tertiary">
+<td class="pr-4 py-0.5 text-[#ff8075] select-none text-right font-bold">04</td>
+<td>  <span class="text-[#bb9af7]">let</span> attempts = <span class="text-[#ff9e64]">0</span>;</td>
+</tr>
+<!-- Line 05 -->
+<tr class="bg-tertiary/20 border-l-4 border-tertiary">
+<td class="pr-4 py-0.5 text-[#ff8075] select-none text-right font-bold">05</td>
+<td>  <span class="text-[#bb9af7]">let</span> isConfirmed = <span class="text-[#ff9e64]">false</span>;</td>
+</tr>
+<!-- Line 06 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">06</td>
+<td class="text-[#7ea375]">  // Line 03-05: Infinite retry loop without backoff</td>
+</tr>
+<!-- Line 07 -->
+<tr class="bg-tertiary/20 border-l-4 border-tertiary">
+<td class="pr-4 py-0.5 text-[#ff8075] select-none text-right font-bold">07</td>
+<td>  <span class="text-[#f7768e] font-bold">while</span> (!isConfirmed) {</td>
+</tr>
+<!-- Line 08 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">08</td>
+<td>    attempts++;</td>
+</tr>
+<!-- Line 09 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">09</td>
+<td>    <span class="text-[#f7768e]">try</span> {</td>
+</tr>
+<!-- Line 10 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">10</td>
+<td class="text-[#7ea375]">      // Line 12: Blocking sync fetch with O(n!) payload inside tight loop</td>
+</tr>
+<!-- Line 11 -->
+<tr class="bg-primary-container/20 border-l-4 border-primary-container">
+<td class="pr-4 py-0.5 text-primary-container select-none text-right font-bold">11</td>
+<td>      <span class="text-[#bb9af7]">const</span> res = <span class="text-[#f7768e] font-bold">await</span> fetch(<span class="text-[#9ece6a]">`https://api.nashikfest.dev/book`</span>, {</td>
+</tr>
+<!-- Line 12 -->
+<tr class="bg-primary-container/20 border-l-4 border-primary-container">
+<td class="pr-4 py-0.5 text-primary-container select-none text-right font-bold">12</td>
+<td>        method: <span class="text-[#9ece6a]">'POST'</span>,</td>
+</tr>
+<!-- Line 13 -->
+<tr class="bg-primary-container/20 border-l-4 border-primary-container">
+<td class="pr-4 py-0.5 text-primary-container select-none text-right font-bold">13</td>
+<td>        body: JSON.stringify({ user: userId, tries: attempts })</td>
+</tr>
+<!-- Line 14 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">14</td>
+<td>      });</td>
+</tr>
+<!-- Line 15 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">15</td>
+<td>      <span class="text-[#f7768e]">if</span> (res.status === <span class="text-[#ff9e64]">200</span>) isConfirmed = <span class="text-[#ff9e64]">true</span>;</td>
+</tr>
+<!-- Line 16 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">16</td>
+<td>    } <span class="text-[#f7768e]">catch</span> (err) {</td>
+</tr>
+<!-- Line 17 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">17</td>
+<td class="text-[#7ea375]">      // Line 24: Swallowing error silently in production</td>
+</tr>
+<!-- Line 18 -->
+<tr class="bg-[#34A853]/20 border-l-4 border-[#34A853]">
+<td class="pr-4 py-0.5 text-[#72f195] select-none text-right font-bold">18</td>
+<td>      <span class="text-[#bb9af7]">let</span> <span class="text-[#ff9e64] underline decoration-wavy">temp2_final_really_final</span> = err;</td>
+</tr>
+<!-- Line 19 -->
+<tr class="bg-[#34A853]/20 border-l-4 border-[#34A853]">
+<td class="pr-4 py-0.5 text-[#72f195] select-none text-right font-bold">19</td>
+<td>      console.log(<span class="text-[#9ece6a]">"Aata bagha... retrying right now!"</span>, temp2_final_really_final);</td>
+</tr>
+<!-- Line 20 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">20</td>
+<td>    }</td>
+</tr>
+<!-- Line 21 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">21</td>
+<td>  }</td>
+</tr>
+<!-- Line 22 -->
+<tr>
+<td class="pr-4 py-0.5 text-outline select-none text-right">22</td>
+<td>}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Source Editor Footer Bar -->
+<div class="bg-surface-container px-4 py-2.5 border-t-[2.5px] border-on-surface flex flex-wrap items-center justify-between gap-2 text-label-badge font-label-badge text-on-surface-variant font-bold">
+<div class="flex items-center gap-3">
+<span>TypeScript</span>
+<span>•</span>
+<span>UTF-8</span>
+<span>•</span>
+<span class="text-tertiary flex items-center gap-1 font-bold">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> 3 Issues Detected
+            </span>
+</div>
+<div class="bg-surface-container-lowest px-2.5 py-0.5 rounded border border-on-surface text-on-surface font-extrabold">
+            Audit Score: 72/100
+          </div>
+</div>
+<!-- Dev Note Sticker -->
+<div class="p-3 bg-surface-container-high border-t-[2.5px] border-on-surface flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-tertiary">warning</span>
+<span><strong>Nashik Gateway Warning:</strong> Server log shows 45,000 rapid retry cycles. Misal pav order delayed due to CPU overheating at Gangapur Road datacenter.</span>
+</div>
+</div>
+<!-- ========================================================= -->
+<!-- RIGHT COLUMN: The Savage Roast Audit & Redemption Report  -->
+<!-- ========================================================= -->
+<div class="lg:col-span-6 xl:col-span-6 space-y-5">
+<!-- 1. RESULT HEADER & RUBBER-STAMP ROAST SCORE -->
+<div class="bg-surface-container-lowest rounded-[22px] brutal-border brutal-shadow p-5 relative overflow-hidden">
+<!-- Category label & Delivered Status -->
+<div class="flex items-center justify-between gap-2 mb-3">
+<span class="font-label-badge text-label-badge text-on-surface-variant font-extrabold uppercase tracking-widest">
+              AUDIT // REPORT
+            </span>
+<span class="bg-[#34A853] text-white px-3 py-0.5 rounded-full brutal-border text-label-badge font-label-badge font-bold brutal-shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] fill-1">verified</span>
+              ROASTED &amp; DELIVERED
+            </span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<!-- Large Savage Headline -->
+<div class="flex-1">
+<span class="text-label-badge font-label-badge bg-primary-container px-2 py-0.5 brutal-border inline-block mb-2 font-bold">VERDICT // निकाल</span>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-on-surface leading-tight tracking-tight">
+                "Yeh code nahi, Panchavati Express ki general boghi hai."
+              </h2>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1.5">
+                Overcrowded, completely unbuffered, and guaranteed to crash before reaching Kalyan junction.
+              </p>
+</div>
+<!-- Tilted Rubber-Stamp Score Badge -->
+<div class="shrink-0 self-center sm:self-auto rotate-[-3deg] bg-surface-container-lowest brutal-border-3 brutal-shadow-score p-3 rounded-xl text-center border-tertiary">
+<div class="font-label-badge text-[11px] font-black text-tertiary uppercase tracking-wider">
+                ROAST SCORE
+              </div>
+<div class="text-[44px] font-headline-lg font-black text-on-surface leading-none my-0.5">
+                72<span class="text-headline-md font-headline-md text-on-surface-variant font-normal">/100</span>
+</div>
+<div class="bg-tertiary text-on-tertiary text-[10px] font-label-badge font-bold px-2 py-1 rounded brutal-border uppercase tracking-tight">
+                ATTENDANCE SHORT, CODE BHI SHORT 💀
+              </div>
+</div>
+</div>
+</div>
+<!-- 2. ISSUE CARDS (3 Neo-brutalist Cards) -->
+<div class="space-y-3">
+<!-- Card 1: High Severity / Infinite Loop -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge bg-surface-container-high px-2 py-0.5 rounded brutal-border font-bold text-on-surface">
+                  Line 03–05
+                </span>
+<span class="font-label-badge text-label-badge font-extrabold text-on-surface tracking-wider">
+                  LOGIC // RETRY FAULT
+                </span>
+</div>
+<span class="bg-[#DC2626] text-white px-2.5 py-0.5 rounded-full brutal-border text-label-badge font-label-badge font-extrabold shadow-[2px_2px_0px_#1c1b1b]">
+                HIGH SEVERITY 🔥
+              </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface font-semibold mb-2">
+<strong class="text-tertiary font-bold">Roast:</strong> "Bhau, yaha pe condition nahi, lottery lagayi hai. Ek break statement nahi daali, CPU pe omelette banega abhi!"
+            </p>
+<div class="bg-surface-container-low p-2.5 rounded-xl border border-on-surface flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-[#34A853] shrink-0 fill-1">build</span>
+<span><strong>The Fix:</strong> Use finite retry attempts with jitter backoff instead of an infinite `while` loop that freezes thread executions.</span>
+</div>
+</div>
+<!-- Card 2: Medium Severity / O(n!) & Latency -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge bg-surface-container-high px-2 py-0.5 rounded brutal-border font-bold text-on-surface">
+                  Line 12
+                </span>
+<span class="font-label-badge text-label-badge font-extrabold text-on-surface tracking-wider">
+                  PERFORMANCE // NETWORK
+                </span>
+</div>
+<span class="bg-primary-container text-on-surface px-2.5 py-0.5 rounded-full brutal-border text-label-badge font-label-badge font-extrabold shadow-[2px_2px_0px_#1c1b1b]">
+                MEDIUM SEVERITY 🌶️
+              </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface font-semibold mb-2">
+<strong class="text-primary font-bold">Roast:</strong> "O(n!) complexity detected. Yeh function chalne se pehle DevFest 2027 aa jayega."
+            </p>
+<div class="bg-surface-container-low p-2.5 rounded-xl border border-on-surface flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-[#34A853] shrink-0 fill-1">build</span>
+<span><strong>The Fix:</strong> Cache the results in a lookup dictionary, avoid sync blocking payload dumps, and introduce exponential backoff.</span>
+</div>
+</div>
+<!-- Card 3: Low Severity / Terrible Variable Name -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 relative hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all">
+<div class="flex items-center justify-between gap-2 mb-2">
+<div class="flex items-center gap-2">
+<span class="font-label-badge text-label-badge bg-surface-container-high px-2 py-0.5 rounded brutal-border font-bold text-on-surface">
+                  Line 24
+                </span>
+<span class="font-label-badge text-label-badge font-extrabold text-on-surface tracking-wider">
+                  STYLE // CODE SMELL
+                </span>
+</div>
+<span class="bg-[#16A34A] text-white px-2.5 py-0.5 rounded-full brutal-border text-label-badge font-label-badge font-extrabold shadow-[2px_2px_0px_#1c1b1b]">
+                LOW SEVERITY 🍋
+              </span>
+</div>
+<p class="text-body-md font-body-md text-on-surface font-semibold mb-2">
+<strong class="text-[#16A34A] font-bold">Roast:</strong> "Variable ka naam <code class="bg-surface-container px-1 py-0.5 rounded font-mono text-tertiary">temp2_final_really_final</code> kisne rakha? College submission yaad aa gayi!"
+            </p>
+<div class="bg-surface-container-low p-2.5 rounded-xl border border-on-surface flex items-start gap-2 text-body-sm font-body-sm text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-[#34A853] shrink-0 fill-1">build</span>
+<span><strong>The Fix:</strong> Rename to a meaningful typed identifier like <code class="font-bold">retryError: unknown</code> and log via structured telemetry.</span>
+</div>
+</div>
+</div>
+<!-- 3. ERROR // WHAT HAPPENED (Explainer Block) -->
+<div class="bg-[#EFF2FB] rounded-2xl brutal-border brutal-shadow p-4 border-l-[6px] border-l-tertiary">
+<div class="flex items-center gap-2 mb-1.5 font-label-badge text-label-badge font-extrabold text-tertiary tracking-wide uppercase">
+<span class="material-symbols-outlined text-[18px]">error</span>
+            ⚠️ ERROR // WHAT HAPPENED
+          </div>
+<p class="text-body-md font-body-md text-on-surface leading-relaxed">
+            Production server went for Misal Pav break because your infinite loop sent <strong class="underline decoration-tertiary">45,000 unthrottled requests in 3 seconds</strong>, choking the ticketing gateway and triggering Nashik municipal IP lockouts.
+          </p>
+</div>
+<!-- 4. REDEMPTION ARC (Cleaned Code Pane) -->
+<div class="bg-surface-container-lowest rounded-[22px] brutal-border brutal-shadow p-5">
+<div class="flex items-center justify-between gap-3 mb-3">
+<div>
+<div class="inline-flex items-center gap-1.5 font-headline-sm text-headline-sm text-on-surface">
+<span>REDEMPTION ARC ✨</span>
+<span class="bg-[#34A853] text-white text-[11px] font-label-badge px-2 py-0.5 rounded-full brutal-border">PRODUCTION READY</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Ab asli fix dekh, bhau. (Cleaned, rate-limited &amp; typed)
+              </p>
+</div>
+<!-- Interactive Copy Button -->
+<button class="bg-surface-container hover:bg-primary-container text-on-surface brutal-border px-3.5 py-1.5 rounded-full font-label-button text-label-button font-bold brutal-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all flex items-center gap-1.5" id="copyFixBtn" onclick="copyFixCode()">
+<span class="material-symbols-outlined text-[16px]" id="copyIcon">content_copy</span>
+<span id="copyText">[ COPY → ]</span>
+</button>
+</div>
+<!-- Corrected Code Editor (Dark #171717 Theme) -->
+<div class="bg-[#171717] rounded-xl brutal-border p-4 text-[#e6e6e6] font-code-block text-code-block font-mono overflow-x-auto">
+<pre class="leading-relaxed"><code id="codeRedemption"><span class="text-[#7ea375]">// Cleaned, audited &amp; rate-limited version</span>
+<span class="text-[#f7768e] font-bold">async function</span> <span class="text-[#7aa2f7] font-bold">confirmTicketBooking</span>(userId: <span class="text-[#e0af68]">string</span>): <span class="text-[#e0af68]">Promise&lt;BookingResult&gt;</span> {
+  <span class="text-[#bb9af7]">const</span> MAX_RETRIES = <span class="text-[#ff9e64]">3</span>;
+  <span class="text-[#f7768e] font-bold">for</span> (<span class="text-[#bb9af7]">let</span> attempt = <span class="text-[#ff9e64]">1</span>; attempt &lt;= MAX_RETRIES; attempt++) {
+    <span class="text-[#f7768e]">try</span> {
+      <span class="text-[#bb9af7]">const</span> res = <span class="text-[#f7768e] font-bold">await</span> api.bookPass({ userId, attempt });
+      <span class="text-[#f7768e]">if</span> (res.ok) <span class="text-[#f7768e] font-bold">return await</span> res.json();
+    } <span class="text-[#f7768e]">catch</span> (err: <span class="text-[#e0af68]">unknown</span>) {
+      <span class="text-[#f7768e] font-bold">await</span> backoffDelay(attempt * <span class="text-[#ff9e64]">500</span>);
+    }
+  }
+  <span class="text-[#f7768e] font-bold">throw new</span> Error(<span class="text-[#9ece6a]">"Panchavati Express arrived safely, ticket booked!"</span>);
+}</code></pre>
+</div>
+</div>
+<!-- 5. CLOSING ACTION BAR & ENCOURAGEMENT -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 space-y-3">
+<div class="flex flex-wrap items-center gap-3">
+<!-- Share Roast Button -->
+<button class="flex-1 bg-primary-container text-on-surface brutal-border px-5 py-3 rounded-full font-label-button text-label-button font-extrabold brutal-shadow hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">share</span>
+              [ SHARE ROAST → ]
+            </button>
+<!-- Roast Again Spicier -->
+<button class="bg-surface-container-lowest text-tertiary brutal-border px-4 py-3 rounded-full font-label-button text-label-button font-bold brutal-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] fill-1">local_fire_department</span>
+              [ ROAST AGAIN, SPICIER 🔥 ]
+            </button>
+<!-- New Code -->
+<button class="bg-surface-container text-on-surface brutal-border px-4 py-3 rounded-full font-label-button text-label-button font-bold brutal-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-1 active:translate-y-1 transition-all">
+              [ NEW CODE ]
+            </button>
+</div>
+<!-- Encouragement Note -->
+<div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant pt-2 border-t border-outline-variant">
+<span class="text-xl">💪</span>
+<span><strong>Bhavuk nako hou:</strong> Chinta mat kar. Code bhi gym jaisa hai — repeat karoge toh better hoga. See you at DevFest Nashik 2026!</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- ========================================== -->
+<!-- 5. BOTTOM ROW WIDGETS (Nashik Cultural Triad) -->
+<!-- ========================================== -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Widget 1: Nashik Tikhat-Meter -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-badge text-label-badge text-on-surface-variant font-extrabold uppercase">
+              METRIC // SPICE LEVEL
+            </span>
+<span class="text-xs bg-tertiary text-on-tertiary px-2 py-0.5 rounded font-bold">Wat Lavli</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">
+            Nashik Tikhat-Meter 🌶️
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-3">
+            Thermal damage caused to CPU cores and local pride.
+          </p>
+</div>
+<div>
+<!-- Segmented Brutal Bar -->
+<div class="w-full bg-surface-container-high rounded-full brutal-border h-5 p-0.5 flex items-center overflow-hidden">
+<div class="bg-gradient-to-r from-[#34A853] via-[#FBBC05] to-[#EA4335] h-full rounded-full border-r-[2px] border-on-surface" style="width: 94%"></div>
+</div>
+<div class="flex justify-between items-center mt-2 text-label-badge font-label-badge font-black text-on-surface">
+<span>MILD TARRI</span>
+<span class="text-tertiary">99.4% EXTENDED FLAME</span>
+</div>
+</div>
+</div>
+<!-- Widget 2: Live DevFest Nashik Roasts Stats -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-badge text-label-badge text-on-surface-variant font-extrabold uppercase">
+              LIVE METRICS // DEVFEST
+            </span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#34A853] animate-ping"></span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">
+            DevFest Roasts Counter 📊
+          </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            Total pull requests demolished live on stage today.
+          </p>
+</div>
+<div class="pt-3 border-t-[2px] border-on-surface/20 flex items-baseline justify-between">
+<div class="text-display-hero-mobile font-display-hero-mobile font-black text-on-surface">
+            4,813
+          </div>
+<div class="bg-primary-container text-on-surface px-2.5 py-1 rounded brutal-border font-label-badge text-label-badge font-black">
+            +29 IN LAST 10 MIN
+          </div>
+</div>
+</div>
+<!-- Widget 3: Slang Dictionary Widget -->
+<div class="bg-surface-container-lowest rounded-2xl brutal-border brutal-shadow p-4 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-badge text-label-badge text-on-surface-variant font-extrabold uppercase">
+              NASHIK TECH SLANG DICTIONARY
+            </span>
+<span class="font-mono text-xs font-bold text-primary">#042</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface mb-1">
+            Wat Lavli <span class="text-body-sm text-on-surface-variant">[वाट लावली]</span>
+</h3>
+<p class="text-body-sm font-body-sm text-on-surface">
+<strong>Noun / Phrase:</strong> Total architectural obliteration when someone commits directly to <code class="bg-surface-container px-1 py-0.5 rounded font-mono">main</code> on a Friday evening.
+          </p>
+</div>
+<div class="pt-2 text-label-badge font-label-badge text-on-surface-variant">
+          Synonym: <em>"Server cha misal zala"</em> 🥣
+        </div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- 6. WARLI GEOMETRIC MARQUEE DIVIDER STRIP   -->
+<!-- ========================================== -->
+<div class="w-full bg-[#1c1b1b] text-primary-container py-3 brutal-border border-l-0 border-r-0 overflow-hidden select-none">
+<div class="whitespace-nowrap flex items-center gap-8 font-label-badge text-label-badge tracking-widest font-extrabold uppercase animate-marquee">
+<span>GDG NASHIK 2026 ▲▼ DEV FEST NASHIK ▲▼ CODE ROASTER : भाजून काढ ▲▼ MISAL LEVEL SAVAGE ▲▼ NO CONSOLE.LOG LEFT BEHIND ▲▼ WAT LAVLI PREVENTOR ▲▼</span>
+<span>GDG NASHIK 2026 ▲▼ DEV FEST NASHIK ▲▼ CODE ROASTER : भाजून काढ ▲▼ MISAL LEVEL SAVAGE ▲▼ NO CONSOLE.LOG LEFT BEHIND ▲▼ WAT LAVLI PREVENTOR ▲▼</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 7. FOOTER (Shared Anchor Component)        -->
+<!-- ========================================== -->
+<footer class="docked full-width bottom-0 bg-surface-container dark:bg-inverse-surface border-t-[2.5px] border-on-surface dark:border-outline-variant flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 max-w-7xl mx-auto gap-4">
+<!-- Footer Copyright Branding -->
+<div class="flex items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-inverse-on-surface">
+          CODE ROASTER
+        </span>
+<span class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant">
+          Built with 💛 by Google Developer Groups Nashik · DevFest Nashik 2026
+        </span>
+</div>
+<!-- Links Cluster -->
+<div class="flex flex-wrap items-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100" href="#">
+          GDG Nashik
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100" href="#">
+          DevFest 2026
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100" href="#">
+          Code of Conduct
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100" href="#">
+          Contribute Slang
+        </a>
+</div>
+</div>
+</footer>
+<!-- Micro-Interactions Script -->
+<script>
+    function copyFixCode() {
+      const codeText = `async function confirmTicketBooking(userId: string): Promise<BookingResult> {
+  const MAX_RETRIES = 3;
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    try {
+      const res = await api.bookPass({ userId, attempt });
+      if (res.ok) return await res.json();
+    } catch (err: unknown) {
+      await backoffDelay(attempt * 500);
+    }
+  }
+  throw new Error("Panchavati Express arrived safely, ticket booked!");
+}`;
+      navigator.clipboard.writeText(codeText).then(() => {
+        const textSpan = document.getElementById('copyText');
+        const iconSpan = document.getElementById('copyIcon');
+        const btn = document.getElementById('copyFixBtn');
+        
+        textSpan.innerText = 'COPIED ✓';
+        iconSpan.innerText = 'check';
+        btn.classList.add('bg-[#34A853]', 'text-white');
+        btn.classList.remove('bg-surface-container');
+
+        setTimeout(() => {
+          textSpan.innerText = '[ COPY → ]';
+          iconSpan.innerText = 'content_copy';
+          btn.classList.remove('bg-[#34A853]', 'text-white');
+          btn.classList.add('bg-surface-container');
+        }, 2200);
+      });
+    }
+  </script>
+</body></html>

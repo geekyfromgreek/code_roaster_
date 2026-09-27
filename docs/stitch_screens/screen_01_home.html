@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CODE ROASTER 🔥 | DevFest Nashik 2026</title>
+<!-- Google Fonts: Space Grotesk, Bricolage Grotesque, JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=JetBrains+Mono:wght@400;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim from Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-error": "#ffffff",
+            "secondary-container": "#4d8efe",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary-fixed-dim": "#ffb4a9",
+            "tertiary": "#b91e17",
+            "error": "#ba1a1a",
+            "surface-dim": "#dcd9d9",
+            "surface-bright": "#fcf9f8",
+            "tertiary-container": "#ffa396",
+            "on-primary-container": "#644500",
+            "on-secondary-container": "#00285c",
+            "on-secondary-fixed": "#001a41",
+            "inverse-surface": "#313030",
+            "on-error-container": "#93000a",
+            "primary-container": "#edb13e",
+            "secondary": "#005ac1",
+            "background": "#fcf9f8",
+            "on-background": "#1c1b1b",
+            "inverse-primary": "#fabc48",
+            "on-surface": "#1c1b1b",
+            "outline-variant": "#d4c4af",
+            "on-primary-fixed": "#271900",
+            "on-tertiary": "#ffffff",
+            "surface-variant": "#e5e2e1",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#504535",
+            "primary": "#7d5700",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#ffdad5",
+            "on-tertiary-fixed-variant": "#930004",
+            "on-tertiary-container": "#9b0005",
+            "outline": "#827563",
+            "surface-container": "#f0edec",
+            "on-tertiary-fixed": "#410001",
+            "surface-container-highest": "#e5e2e1",
+            "surface-container-high": "#ebe7e7",
+            "secondary-fixed-dim": "#adc6ff",
+            "surface-container-low": "#f6f3f2",
+            "surface": "#fcf9f8",
+            "primary-fixed": "#ffdeaa",
+            "surface-tint": "#7d5700",
+            "secondary-fixed": "#d8e2ff",
+            "inverse-on-surface": "#f3f0ef",
+            "on-secondary-fixed-variant": "#004494",
+            "primary-fixed-dim": "#fabc48",
+            "on-primary-fixed-variant": "#5f4100"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "gutter": "1.5rem",
+            "gutter-mobile": "0.75rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1rem"
+          },
+          "fontFamily": {
+            "body-md": ["Space Grotesk"],
+            "body-sm": ["Space Grotesk"],
+            "headline-sm": ["Space Grotesk"],
+            "headline-md": ["Bricolage Grotesque"],
+            "label-badge": ["JetBrains Mono"],
+            "code-block": ["JetBrains Mono"],
+            "code-inline": ["JetBrains Mono"],
+            "body-lg": ["Space Grotesk"],
+            "label-button": ["Space Grotesk"],
+            "display-hero": ["Bricolage Grotesque"],
+            "display-hero-mobile": ["Bricolage Grotesque"],
+            "headline-lg": ["Bricolage Grotesque"],
+            "headline-lg-mobile": ["Bricolage Grotesque"]
+          },
+          "fontSize": {
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "500" }],
+            "headline-sm": ["20px", { "lineHeight": "26px", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-badge": ["12px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+            "code-block": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "code-inline": ["13px", { "lineHeight": "16px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+            "label-button": ["16px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Subtle Neo-Brutalist Dot Grid Canvas */
+    .bg-dot-pattern {
+      background-color: #f8f4ec;
+      background-image: radial-gradient(#1c1b1b 1.2px, transparent 1.2px);
+      background-size: 24px 24px;
+    }
+    /* Code scroll styling */
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #1e1e1e;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #383838;
+      border: 1px solid #141414;
+    }
+  </style>
+</head>
+<body class="bg-dot-pattern text-on-surface antialiased min-h-screen flex flex-col font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- ========================================== -->
+<!-- 1. TOP FLOATING PILL NAVBAR                -->
+<!-- Authority: Shared Components JSON TopNavBar -->
+<!-- ========================================== -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 rounded-full border-[2.5px] border-on-surface dark:border-outline-variant w-[92%] max-w-6xl bg-surface-container-lowest dark:bg-inverse-surface shadow-[4px_4px_0px_#1c1b1b] dark:shadow-[4px_4px_0px_#fabc48] transition-all">
+<div class="flex justify-between items-center px-4 py-2.5 w-full">
+<!-- Brand Anchor -->
+<a class="flex items-center gap-2.5 group" href="#roaster">
+<div class="flex items-center gap-1 bg-[#1c1b1b] text-white px-2 py-1 rounded-full text-label-badge font-label-badge border-[1.5px] border-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-[#4285F4]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#EA4335]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#FBBC05]"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-[#34A853]"></span>
+<span class="ml-1 text-[11px] tracking-widest font-bold">GDG NASHIK</span>
+</div>
+<span class="text-headline-md font-headline-md text-on-surface dark:text-inverse-on-surface tracking-tight uppercase flex items-center gap-1">
+          CODE ROASTER 🔥
+        </span>
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-1.5">
+<!-- Active Nav: Roaster (Exact matching page intent) -->
+<a class="text-on-surface dark:text-inverse-on-surface font-bold bg-primary-container text-on-primary-container px-3 py-1 rounded-full border-[2px] border-on-surface hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all duration-100 ease-out active:translate-x-1 active:translate-y-1 active:shadow-none" href="#roaster">
+          Roaster
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-button text-label-button px-3 py-1 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all duration-100 ease-out active:translate-x-1 active:translate-y-1 active:shadow-none" href="#leaderboard">
+          Leaderboard
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-button text-label-button px-3 py-1 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all duration-100 ease-out active:translate-x-1 active:translate-y-1 active:shadow-none" href="#hall-of-shame">
+          Hall of Shame
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-label-button text-label-button px-3 py-1 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] transition-all duration-100 ease-out active:translate-x-1 active:translate-y-1 active:shadow-none" href="#rules">
+          Rules
+        </a>
+</nav>
+<!-- Trailing Action Badges & Buttons -->
+<div class="flex items-center gap-2">
+<div class="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border-[2px] border-on-surface text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b]">
+<span class="w-2 h-2 rounded-full bg-[#EA4335] animate-pulse"></span>
+<span>DevFest 2026</span>
+</div>
+<button class="bg-primary-container text-on-surface font-label-button text-label-button px-4 py-1.5 rounded-full border-[2.5px] border-on-surface shadow-[3px_3px_0px_#1c1b1b] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_#1c1b1b] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all flex items-center gap-1.5" id="quick-roast-nav">
+<span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+<span>भाजून काढ 🔥</span>
+</button>
+</div>
+</div>
+</header>
+<!-- ========================================== -->
+<!-- 2. HERO SECTION & CULTURAL STICKERS       -->
+<!-- ========================================== -->
+<main class="flex-1 max-w-[1320px] w-full mx-auto px-4 md:px-8 pt-28 pb-16">
+<!-- Top Hero Header Area -->
+<section class="text-center relative py-6 md:py-10 max-w-4xl mx-auto">
+<!-- Floating Cultural Neo-Brutalist Badges / Stickers -->
+<div class="hidden lg:block absolute -left-12 top-4 rotate-[-6deg] z-10 pointer-events-none">
+<div class="bg-[#FBBC05] text-on-surface border-[2.5px] border-on-surface px-3 py-1.5 rounded-full text-label-badge font-label-badge shadow-[4px_4px_0px_#1c1b1b] flex items-center gap-1">
+<span class="text-base">🍇</span>
+<span>नाशिककर Approved</span>
+</div>
+</div>
+<div class="hidden lg:block absolute -right-12 top-2 rotate-[5deg] z-10 pointer-events-none">
+<div class="bg-[#EA4335] text-white border-[2.5px] border-on-surface px-3 py-1.5 rounded-full text-label-badge font-label-badge shadow-[4px_4px_0px_#1c1b1b] flex items-center gap-1">
+<span class="text-base">🌶️</span>
+<span>Misal-Grade Spicy</span>
+</div>
+</div>
+<!-- Pre-title Pill -->
+<div class="inline-flex items-center gap-2 bg-surface-container-lowest border-[2.5px] border-on-surface px-4 py-1.5 rounded-full shadow-[3px_3px_0px_#1c1b1b] mb-4">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EA4335] opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-[#EA4335]"></span>
+</span>
+<span class="text-label-badge font-label-badge uppercase tracking-wider text-on-surface">
+          CODE BOL RAHA HAI · मला वाचवा!
+        </span>
+<span class="material-symbols-outlined text-[#EA4335] text-[18px]">local_fire_department</span>
+</div>
+<!-- Main Headline -->
+<h1 class="text-display-hero-mobile md:text-display-hero font-display-hero text-on-surface tracking-tight leading-none mb-3">
+        CODE <span class="bg-[#EDB13E] px-3.5 py-1 rounded-2xl border-[3px] border-on-surface shadow-[5px_5px_0px_#1c1b1b] inline-block -rotate-1">ROASTER</span> 🔥
+      </h1>
+<!-- Subtitle -->
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto mt-3">
+        Paste your code. Pick your roast level. Get humbled. Get the fix.
+        <span class="block text-body-sm font-body-sm text-outline mt-1">
+          Handcrafted with cutting chai &amp; savage humor for DevFest Nashik 2026.
+        </span>
+</p>
+</section>
+<!-- ========================================== -->
+<!-- 3. SPLIT-PANE WORKSTATION CONTAINER        -->
+<!-- ========================================== -->
+<section class="bg-surface-container-lowest border-[3px] border-on-surface rounded-[24px] shadow-[6px_6px_0px_#1c1b1b] overflow-hidden mt-2" id="roaster">
+<!-- A. CONTROL BAR (Top Workstation Toolbar) -->
+<div class="bg-surface-container border-b-[3px] border-on-surface p-4 md:px-6 flex flex-wrap items-center justify-between gap-4">
+<!-- Left: Segmented Roast Level Control -->
+<div class="flex items-center flex-wrap gap-2.5">
+<span class="text-label-badge font-label-badge text-on-surface-variant uppercase mr-1">Spiciness:</span>
+<div class="inline-flex bg-surface-container-high p-1 rounded-full border-[2.5px] border-on-surface shadow-[2px_2px_0px_#1c1b1b]">
+<!-- Mild Level -->
+<button class="roast-pill px-3.5 py-1 rounded-full text-label-badge font-label-badge transition-all text-on-surface hover:bg-surface-container-lowest">
+              Halka 🍋
+            </button>
+<!-- Medium/Spicy Level (Selected State) -->
+<button class="roast-pill px-3.5 py-1 rounded-full text-label-badge font-label-badge transition-all bg-[#EDB13E] text-on-surface font-bold border-[2px] border-on-surface shadow-[2px_2px_0px_#1c1b1b]">
+              Tikha 🌶️
+            </button>
+<!-- Savage Level -->
+<button class="roast-pill px-3.5 py-1 rounded-full text-label-badge font-label-badge transition-all text-on-surface hover:bg-surface-container-lowest">
+              Zanzanit 🔥
+            </button>
+</div>
+</div>
+<!-- Center: Personas & Language Selectors -->
+<div class="flex items-center flex-wrap gap-2.5">
+<!-- Persona Dropdown -->
+<div class="relative">
+<button class="flex items-center gap-2 bg-surface-container-lowest border-[2.5px] border-on-surface px-3 py-1.5 rounded-full text-label-badge font-label-badge shadow-[3px_3px_0px_#1c1b1b] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#1c1b1b] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+<span>🎭 Stand-up Roaster</span>
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Language Dropdown -->
+<div class="relative">
+<button class="flex items-center gap-2 bg-surface-container-lowest border-[2.5px] border-on-surface px-3 py-1.5 rounded-full text-label-badge font-label-badge shadow-[3px_3px_0px_#1c1b1b] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0px_#1c1b1b] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all">
+<span class="material-symbols-outlined text-[16px] text-secondary">bolt</span>
+<span>Auto-detect (TS/JS)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_drop_down</span>
+</button>
+</div>
+<!-- Error Toggle Chip -->
+<button class="flex items-center gap-1.5 bg-[#ffdad6] border-[2.5px] border-on-surface px-3 py-1.5 rounded-full text-label-badge font-label-badge text-on-tertiary-container shadow-[3px_3px_0px_#1c1b1b] hover:bg-[#ffa396] transition-all">
+<span class="material-symbols-outlined text-[16px]">bug_report</span>
+<span>+ ERROR LOG</span>
+</button>
+</div>
+<!-- Right: Primary Action Button ("भाजून काढ 🔥") -->
+<div>
+<button class="bg-[#EDB13E] text-on-surface font-label-button text-label-button px-6 py-2.5 rounded-full border-[2.5px] border-on-surface shadow-[4px_4px_0px_#1c1b1b] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_#1c1b1b] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all flex items-center gap-2" id="roast-btn">
+<span>Roast Me / भाजून काढ</span>
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+<span class="text-lg">→</span>
+</button>
+</div>
+</div>
+<!-- WORKSTATION BODY: 12-Column Responsive Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[580px]">
+<!-- B. LEFT PANE: CODE INPUT EDITOR (7 Columns) -->
+<div class="lg:col-span-7 border-b-[3px] lg:border-b-0 lg:border-r-[3px] border-on-surface flex flex-col bg-[#141414]">
+<!-- Code Editor Top Bar -->
+<div class="flex items-center justify-between px-4 py-3 bg-[#1e1e1e] border-b-[2px] border-[#2e2e2e]">
+<div class="flex items-center gap-3">
+<!-- Faux OS Dots -->
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-[#EA4335] border border-black"></span>
+<span class="w-3 h-3 rounded-full bg-[#FBBC05] border border-black"></span>
+<span class="w-3 h-3 rounded-full bg-[#34A853] border border-black"></span>
+</div>
+<span class="bg-[#2d2d2d] text-white text-[11px] font-label-badge px-2 py-0.5 rounded border border-[#444]">
+                INPUT // SRC
+              </span>
+<span class="text-white text-xs font-mono font-bold tracking-wider">production_disaster.ts</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-xs font-label-badge text-[#FBBC05] hover:underline flex items-center gap-1" id="load-sample-btn">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+                SAMPLE BUG
+              </button>
+<span class="text-[#555]">|</span>
+<button class="text-xs font-label-badge text-[#aaa] hover:text-white" id="clear-code-btn">
+                CLEAR
+              </button>
+</div>
+</div>
+<!-- Code Lines & Editor Body -->
+<div class="flex-1 flex font-code-block text-code-block overflow-hidden relative">
+<!-- Gutter Line Numbers -->
+<div class="select-none text-[#555] py-4 px-3 text-right bg-[#171717] border-r border-[#262626] font-mono text-[13px] leading-[22px] space-y-0">
+<div>01</div><div>02</div><div>03</div><div>04</div><div>05</div>
+<div>06</div><div>07</div><div>08</div><div>09</div><div>10</div>
+<div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+<div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
+</div>
+<!-- Code Content Area -->
+<div class="flex-1 p-4 overflow-x-auto custom-scrollbar text-[#e5e2e1] leading-[22px]">
+<div class="text-[#7a7a7a] italic">// Nashik Grape Festival VIP Ticketing Logic</div>
+<div class="text-[#7a7a7a] italic">// "It works on my machine. Shapat!" - Junior Dev</div>
+<div><span class="text-[#4285F4]">async function</span> <span class="text-[#FBBC05]">confirmTicketBooking</span>(userId: <span class="text-[#34A853]">string</span>) {</div>
+<div class="pl-4"><span class="text-[#4285F4]">let</span> attempts = <span class="text-[#EDB13E]">0</span>;</div>
+<div class="pl-4"><span class="text-[#4285F4]">let</span> isConfirmed = <span class="text-[#EA4335]">false</span>;</div>
+<div class="pl-4 text-[#7a7a7a] italic">// Infinite retry loop without exponential backoff or timeout</div>
+<div class="pl-4"><span class="text-[#4285F4]">while</span> (!isConfirmed) {</div>
+<div class="pl-8">attempts++;</div>
+<div class="pl-8"><span class="text-[#4285F4]">try</span> {</div>
+<div class="pl-12 text-[#7a7a7a] italic">// Blocking thread call on every iteration!</div>
+<div class="pl-12"><span class="text-[#4285F4]">const</span> res = <span class="text-[#4285F4]">await</span> fetch(<span class="text-[#34A853]">`https://api.nashikfest.dev/book`</span>, {</div>
+<div class="pl-16">method: <span class="text-[#34A853]">'POST'</span>,</div>
+<div class="pl-16">body: JSON.stringify({ user: userId, tries: attempts })</div>
+<div class="pl-12">});</div>
+<div class="pl-12"><span class="text-[#4285F4]">if</span> (res.status === <span class="text-[#EDB13E]">200</span>) isConfirmed = <span class="text-[#34A853]">true</span>;</div>
+<div class="pl-8">} <span class="text-[#4285F4]">catch</span> (err) {</div>
+<div class="pl-12 text-[#7a7a7a] italic">// Swallowing error silently in production</div>
+<div class="pl-12">console.log(<span class="text-[#34A853]">"Aata bagha... retrying right now!"</span>);</div>
+<div class="pl-8">}</div>
+<div class="pl-4">}</div>
+<div>}</div>
+</div>
+</div>
+<!-- Editor Footer Status Bar -->
+<div class="bg-[#1e1e1e] border-t border-[#2d2d2d] px-4 py-2 flex items-center justify-between text-[12px] font-label-badge text-[#8c8c8c]">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1.5 text-white">
+<span class="w-2 h-2 rounded-full bg-[#34A853]"></span> TypeScript
+              </span>
+<span>UTF-8</span>
+<span>Ln 18, Col 42</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-24 bg-[#333] h-1.5 rounded-full overflow-hidden inline-block">
+<span class="bg-[#EDB13E] h-full block w-[15%]"></span>
+</span>
+<span class="text-white">1,204 / 12,000 char</span>
+</div>
+</div>
+</div>
+<!-- C. RIGHT PANE: AUDIT // ROAST REPORT (5 Columns) -->
+<div class="lg:col-span-5 flex flex-col bg-[#FDFBF7]">
+<!-- Report Top Header -->
+<div class="flex items-center justify-between px-5 py-3.5 border-b-[2.5px] border-on-surface bg-surface-container">
+<div class="flex items-center gap-2">
+<span class="bg-surface-container-lowest border-[1.5px] border-on-surface px-2 py-0.5 rounded text-[11px] font-label-badge">
+                AUDIT // REPORT
+              </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">ROAST REPORT</h2>
+</div>
+<div class="flex items-center gap-1.5 bg-[#d8e2ff] border-[2px] border-on-surface px-2.5 py-0.5 rounded-full text-label-badge font-label-badge text-on-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>READY TO ROAST</span>
+</div>
+</div>
+<!-- Empty State Container & Analysis Canvas -->
+<div class="flex-1 p-6 flex flex-col items-center justify-center text-center" id="roast-output">
+<!-- Neo-Brutalist Illustrated Flame Avatar / Warli Mascot -->
+<div class="relative mb-5">
+<div class="w-28 h-28 rounded-2xl bg-[#EDB13E] border-[3px] border-on-surface shadow-[4px_4px_0px_#1c1b1b] flex flex-col items-center justify-center rotate-[-3deg] relative">
+<!-- Tiny Warli Geometric Motif Stamp -->
+<div class="absolute -top-3 -right-3 bg-[#EA4335] text-white p-1 rounded-full border-[2px] border-on-surface shadow-[2px_2px_0px_#1c1b1b]">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</div>
+<!-- Mascot Face -->
+<div class="flex items-center gap-4 mb-2">
+<div class="w-3.5 h-3.5 bg-black rounded-full"></div>
+<div class="w-3.5 h-3.5 bg-black rounded-full"></div>
+</div>
+<div class="w-8 h-2 bg-black rounded-full"></div>
+<div class="text-[10px] font-label-badge text-black font-bold mt-2 tracking-tighter">
+                  NASHIK_BOT_v2.6
+                </div>
+</div>
+</div>
+<!-- Empty State Typography -->
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">
+              Your code is suspiciously quiet.
+            </h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-sm mb-6">
+              Paste your production code or click below to unleash the Nashik dev judges. Don't worry, we bring the bandage.
+            </p>
+<!-- Secondary Trigger CTA -->
+<button class="bg-surface-container-lowest border-[2.5px] border-on-surface px-5 py-2 rounded-full text-label-button font-label-button shadow-[3px_3px_0px_#1c1b1b] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0px_#1c1b1b] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all flex items-center gap-2 mb-8" id="trigger-sample-audit">
+<span>[ TRY SAMPLE BUG → ]</span>
+</button>
+<!-- Analysis Teaser Pills Bento -->
+<div class="w-full max-w-md border-t-[2px] border-dashed border-outline-variant pt-6">
+<p class="text-[11px] font-label-badge text-outline uppercase tracking-wider mb-3">Diagnostic Coverage Guaranteed:</p>
+<div class="flex flex-wrap items-center justify-center gap-2">
+<span class="bg-[#fff] border-[2px] border-on-surface px-3 py-1 rounded-full text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b]">
+                  🔥 Savage Roast
+                </span>
+<span class="bg-[#fff] border-[2px] border-on-surface px-3 py-1 rounded-full text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b]">
+                  🧪 Root Cause
+                </span>
+<span class="bg-[#fff] border-[2px] border-on-surface px-3 py-1 rounded-full text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b]">
+                  🛠️ One-Click Fix
+                </span>
+<span class="bg-[#FBBC05] border-[2px] border-on-surface px-3 py-1 rounded-full text-label-badge font-label-badge shadow-[2px_2px_0px_#1c1b1b]">
+                  🌶️ Nashik Slang Level: High
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ========================================== -->
+<!-- BENTO SHOWCASE: LIVE METRICS & HALL OF SHAME -->
+<!-- ========================================== -->
+<section class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Roast-o-meter Gauge -->
+<div class="bg-surface-container-lowest border-[2.5px] border-on-surface rounded-2xl p-5 shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-badge font-label-badge bg-[#e5e2e1] px-2 py-0.5 rounded border border-on-surface">GAUGE // 01</span>
+<span class="material-symbols-outlined text-[#EA4335]">speed</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm mb-1">Nashik Tikhat-Meter</h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-4">Calculates emotional &amp; architectural damage of your loop.</p>
+<!-- Segmented Progress Bar -->
+<div class="grid grid-cols-5 gap-1.5 bg-surface-container p-1 rounded-xl border-[2px] border-on-surface mb-2">
+<div class="h-4 bg-[#34A853] rounded"></div>
+<div class="h-4 bg-[#34A853] rounded"></div>
+<div class="h-4 bg-[#FBBC05] rounded"></div>
+<div class="h-4 bg-[#EDB13E] rounded"></div>
+<div class="h-4 bg-[#EA4335] rounded animate-pulse"></div>
+</div>
+<div class="flex justify-between text-[11px] font-label-badge text-outline">
+<span>Halka (0%)</span>
+<span class="text-[#EA4335] font-bold">Wat Lavli (99.4%)</span>
+</div>
+</div>
+<!-- Card 2: DevFest 2026 Live Roast Ticker -->
+<div class="bg-surface-container-lowest border-[2.5px] border-on-surface rounded-2xl p-5 shadow-[4px_4px_0px_#1c1b1b]">
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-badge font-label-badge bg-[#ffdeaa] px-2 py-0.5 rounded border border-on-surface">LIVE // STATS</span>
+<span class="material-symbols-outlined text-secondary">insights</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm mb-1">DevFest Nashik Roasts</h4>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-display-hero-mobile font-display-hero font-bold text-on-surface">4,812</span>
+<span class="text-label-badge font-label-badge text-[#34A853] font-bold">+28 today</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Top caught infraction: <code class="bg-[#f0edec] px-1.5 py-0.5 rounded border border-[#ccc] font-code-inline">console.log("here 111")</code> in production.</p>
+</div>
+<!-- Card 3: Cultural Slang Dictionary Teaser -->
+<div class="bg-[#EDB13E] border-[2.5px] border-on-surface rounded-2xl p-5 shadow-[4px_4px_0px_#1c1b1b] flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="text-label-badge font-label-badge bg-white px-2 py-0.5 rounded border border-on-surface">SLANG // DICT</span>
+<span class="text-xl">🌶️</span>
+</div>
+<h4 class="text-headline-sm font-headline-sm mb-1 text-on-surface">"Wat Lavli" [वाट लावली]</h4>
+<p class="text-body-sm font-body-sm text-on-surface mb-3">
+<em>phrase (n.)</em>: What happens when an unindexed SQL query meets 50,000 DevFest attendees.
+          </p>
+</div>
+<div class="pt-2 border-t-[2px] border-on-surface/30 flex justify-between items-center text-xs font-label-badge">
+<span class="font-bold underline cursor-pointer">BROWSE 50+ SLANGS →</span>
+<span>GDG NASHIK</span>
+</div>
+</div>
+</section>
+</main>
+<!-- ========================================== -->
+<!-- WARLI & RANGOLI GEOMETRIC RIBBON STRIP     -->
+<!-- Decorative Folk Geometry Flanked by Borders -->
+<!-- ========================================== -->
+<div class="w-full bg-[#1c1b1b] text-white border-y-[2.5px] border-on-surface py-2 overflow-hidden select-none">
+<div class="flex items-center justify-around gap-8 text-[12px] font-label-badge tracking-widest whitespace-nowrap opacity-90">
+<span>▲ ▼ ▲ ▼ ▲ GDG NASHIK 2026 ▲ ▼ ▲ ▼ ▲</span>
+<span>▲●▲ DEVFEST NASHIK ▲●▲</span>
+<span>▲ ▼ ▲ CODE ROASTER : भाजून काढ ▲ ▼ ▲</span>
+<span>▲●▲ MISAL LEVEL SAVAGE ▲●▲</span>
+<span>▲ ▼ ▲ 100% ORGANIC BUGS ▲ ▼ ▲</span>
+<span class="hidden md:inline">▲ ▼ ▲ ▼ ▲ GDG NASHIK 2026 ▲ ▼ ▲ ▼ ▲</span>
+</div>
+</div>
+<!-- ========================================== -->
+<!-- 4. FOOTER (Shared Components: Footer)      -->
+<!-- Authority: Shared Components JSON Footer   -->
+<!-- ========================================== -->
+<footer class="bg-surface-container dark:bg-inverse-surface border-t-[2.5px] border-on-surface dark:border-outline-variant w-full">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-6 py-8 max-w-7xl mx-auto gap-4">
+<!-- Brand & Copyright from JSON -->
+<div class="flex flex-col sm:flex-row items-center gap-3">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface dark:text-inverse-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#EA4335] text-[20px]">local_fire_department</span>
+          CODE ROASTER
+        </span>
+<span class="hidden sm:inline text-outline">•</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant dark:text-surface-variant text-center sm:text-left">
+          Built with 💛 by Google Developer Groups Nashik · DevFest Nashik 2026
+        </p>
+</div>
+<!-- Links verbatim from JSON -->
+<div class="flex items-center flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100 active:scale-95" href="https://gdg.community.dev" rel="noreferrer" target="_blank">
+          GDG Nashik
+        </a>
+<a class="text-primary dark:text-inverse-primary underline underline-offset-4 font-bold hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100 active:scale-95" href="#devfest">
+          DevFest 2026
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100 active:scale-95" href="#coc">
+          Code of Conduct
+        </a>
+<a class="text-on-surface-variant dark:text-surface-variant font-body-sm text-body-sm hover:text-tertiary dark:hover:text-tertiary-container transition-colors duration-100 active:scale-95" href="#slang">
+          Contribute Slang
+        </a>
+</div>
+</div>
+</footer>
+<!-- ========================================== -->
+<!-- LIGHTWEIGHT INTERACTIVE JAVASCRIPT         -->
+<!-- ========================================== -->
+<script>
+    // Roast Button Trigger Interaction
+    const roastBtn = document.getElementById('roast-btn');
+    const quickNavBtn = document.getElementById('quick-roast-nav');
+    const sampleTrigger = document.getElementById('trigger-sample-audit');
+    const outputContainer = document.getElementById('roast-output');
+
+    const sampleRoastHTML = `
+      <div class="w-full text-left p-2 animate-fadeIn">
+        <div class="flex items-center justify-between mb-4">
+          <div class="bg-[#EA4335] text-white px-3 py-1 rounded-full text-label-badge font-label-badge border-[2px] border-on-surface shadow-[2px_2px_0px_#1c1b1b] flex items-center gap-1.5">
+            <span>ZANZANIT ROAST LEVEL</span> 🔥
+          </div>
+          <span class="text-xs font-mono font-bold bg-[#FBBC05] text-black px-2 py-0.5 rounded border border-black">
+            SEVERITY: WAT LAVLI 💀
+          </span>
+        </div>
+
+        <div class="bg-[#FFF] border-[2.5px] border-on-surface p-4 rounded-xl shadow-[4px_4px_0px_#1c1b1b] mb-4">
+          <h4 class="text-headline-sm font-headline-sm text-[#EA4335] mb-2 flex items-center gap-1.5">
+            <span>🎭</span> "Are bhau, what is this async jatra?"
+          </h4>
+          <p class="text-body-md font-body-md text-on-surface mb-3 leading-relaxed">
+            Your <code class="bg-[#ffdad6] text-[#930004] px-1 rounded font-code-inline font-bold">while (!isConfirmed)</code> loop with zero sleep is currently hitting the Nashik festival servers like a monsoon flash flood at Gangapur Dam. You are silently catching errors and saying <em>'Aata Bagha'</em> while melting the VIP ticket database!
+          </p>
+          <div class="bg-[#f0edec] p-3 rounded-lg border border-on-surface text-xs font-label-badge space-y-1">
+            <div class="text-[#EA4335] font-bold">⚠️ CRITICAL CRIMES DETECTED:</div>
+            <div>• CPU Spin Lock (100% thread exhaustion on Node runtime)</div>
+            <div>• Denial of Service on your own production endpoint</div>
+            <div>• Swallowing exceptions with console.log prayer beads</div>
+          </div>
+        </div>
+
+        <div class="bg-[#d8e2ff] border-[2.5px] border-on-surface p-4 rounded-xl shadow-[4px_4px_0px_#1c1b1b]">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-label-badge font-bold text-secondary">🛠️ RECONSTRUCTED ONE-CLICK FIX</span>
+            <button class="bg-white border border-on-surface text-[11px] font-label-badge px-2 py-0.5 rounded hover:bg-surface-dim">COPY FIX</button>
+          </div>
+          <div class="bg-[#141414] text-white p-3 rounded-lg font-code-block text-[13px] leading-5 overflow-x-auto">
+            <span class="text-[#34A853]">// Add exponential backoff & max attempts!</span><br>
+            <span class="text-[#4285F4]">const</span> delay = ms => <span class="text-[#4285F4]">new</span> Promise(res => setTimeout(res, ms));<br>
+            <span class="text-[#4285F4]">for</span> (<span class="text-[#4285F4]">let</span> i = 0; i &lt; 5; i++) {<br>
+            &nbsp;&nbsp;<span class="text-[#4285F4]">try</span> { <span class="text-[#4285F4]">return</span> <span class="text-[#4285F4]">await</span> apiCall(); }<br>
+            &nbsp;&nbsp;<span class="text-[#4285F4]">catch</span> { <span class="text-[#4285F4]">await</span> delay(1000 * 2 ** i); }<br>
+            }
+          </div>
+        </div>
+      </div>
+    `;
+
+    function triggerRoast() {
+      outputContainer.innerHTML = `
+        <div class="flex flex-col items-center justify-center py-12">
+          <div class="w-12 h-12 border-4 border-on-surface border-t-[#EDB13E] rounded-full animate-spin mb-4"></div>
+          <p class="font-headline-sm text-headline-sm animate-pulse">Brewing roast with Nashik spices...</p>
+          <span class="text-xs font-label-badge text-outline mt-1">Checking server logs & calling DevFest mentors...</span>
+        </div>
+      `;
+      setTimeout(() => {
+        outputContainer.innerHTML = sampleRoastHTML;
+      }, 700);
+    }
+
+    if (roastBtn) roastBtn.addEventListener('click', triggerRoast);
+    if (quickNavBtn) quickNavBtn.addEventListener('click', triggerRoast);
+    if (sampleTrigger) sampleTrigger.addEventListener('click', triggerRoast);
+
+    // Roast Spiciness Pill Selector
+    const pills = document.querySelectorAll('.roast-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-[#EDB13E]', 'font-bold', 'border-[2px]', 'border-on-surface', 'shadow-[2px_2px_0px_#1c1b1b]');
+          p.classList.add('hover:bg-surface-container-lowest');
+        });
+        pill.classList.add('bg-[#EDB13E]', 'font-bold', 'border-[2px]', 'border-on-surface', 'shadow-[2px_2px_0px_#1c1b1b]');
+        pill.classList.remove('hover:bg-surface-container-lowest');
+      });
+    });
+
+    // Reset code clear button
+    const clearBtn = document.getElementById('clear-code-btn');
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        alert("Editor buffer cleared! Paste your fresh crime here.");
+      });
+    }
+  </script>
+</body></html>
